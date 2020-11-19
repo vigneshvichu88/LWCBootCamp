@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="ConditionalRendering" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">   
+            
+            <template if:true={showVisible}>
+                <div class="slds-m-vertical_medium">
+                    <button class="slds-button slds-button_brand" onclick={showJerry}>Show Jerry</button>
+                    <img src={tomlogo} height='200px' width='200px'> 
+                </div>
+            </template>
+            <template if:false={showVisible}>
+                <div class="slds-m-vertical_medium">
+                    <button class="slds-button slds-button_brand" onclick={showTom}>Show Tom</button>
+                    <img src={Jerrylogo} height = '200px' width ='200px'> 
+                </div>
+            </template>
+        </div>
+    </lightning-card>    
+</template>
