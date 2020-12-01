@@ -1,0 +1,58 @@
+<template>
+    <lightning-card title="Account Quick Create" icon-name="standard:account" >
+        <div>
+            <div align="right"><lightning-button variant="brand-outline" 
+                label="Show All Fields" 
+                title="Show all fields" onclick={showAllFields} data-key="Account" ></lightning-button>
+                <lightning-button variant="brand-outline" 
+                label="New Account Record" 
+                title="New Account Record" onclick={navigateToNewAccountPage} data-key="Account" ></lightning-button>
+            </div>
+
+            <template if:true={showFullAccounts}>
+                <lightning-record-form object-api-name="Account" layout-type="Compact" mode="edit" columns="2"></lightning-record-form>
+            </template>
+            <template if:false={showFullAccounts}>
+                <lightning-record-form object-api-name="Account" fields={accFields} mode="edit" columns="2"></lightning-record-form>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Contact Quick Create" icon-name="standard:contact" >
+        <div>
+            <div align="right"><lightning-button variant="brand-outline" 
+                label="Show All Fields" 
+                title="Show all fields" onclick={showAllFields} data-key="Contact" ></lightning-button>
+                <lightning-button variant="brand-outline" 
+                label="New Contact Record" 
+                title="New Contact Record" onclick={navigateToNewContactPage} data-key="Contact" ></lightning-button>
+            </div>
+            
+            <template if:true={showFullConts}>
+                <lightning-record-form object-api-name="Contact" layout-type="Compact" mode="edit" columns="2"></lightning-record-form>
+            </template>
+            <template if:false={showFullConts}>
+                <lightning-record-form object-api-name="Contact" fields={contFields} mode="edit" columns="2"></lightning-record-form>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Opportunity Quick Create" icon-name="standard:contact" >
+        <div>
+            <div align="right"><lightning-button variant="brand-outline" 
+                label="Show All Fields" 
+                title="Show all fields" onclick={showAllFields} data-key="Opportunity" ></lightning-button>
+                <lightning-button variant="brand-outline" 
+                label="New Opportunity Record" 
+                title="New Opportunity Record" onclick={navigateToNewOpportunityPage} data-key="Opportunity" ></lightning-button>
+            </div>
+            
+            <template if:true={showFullOpps}>
+                <lightning-record-form object-api-name="Opportunity" layout-type="Compact" mode="edit" columns="2"></lightning-record-form>
+            </template>
+            <template if:false={showFullOpps}>
+                <lightning-record-form object-api-name="Opportunity" fields={oppFields} mode="edit" columns="2"></lightning-record-form>
+            </template>
+        </div>
+    </lightning-card>
+</template>
